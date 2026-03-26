@@ -1,0 +1,29 @@
+{
+  "schemaVersion": 1,
+  "id": "hudmod",
+  "version": "${version}",
+  "name": "Helpful Huds",
+  "description": "",
+  "authors": [],
+  "contact": {},
+  "license": "MIT",
+  "icon": "assets/hudmod/icon.png",
+  "environment": "client",
+  "accessWidener": "hudmod.accesswidener",
+  "entrypoints": {
+    "client": [
+      "ca.maximilian.hudmod.client.HelpfulHudsClient"
+    ],
+    "main": [
+      "ca.maximilian.hudmod.HelpfulHuds"
+    ]
+  },
+  "mixins": [
+    "hudmod.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=${loader_version}",
+    "fabric-api": "*",
+    "minecraft": "${minecraft_version}"
+  }
+}
