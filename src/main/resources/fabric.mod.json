@@ -1,0 +1,25 @@
+{
+  "schemaVersion": 1,
+  "id": "${id}",
+  "version": "${version}",
+  "name": "${name}",
+  "description": "${description}",
+  "authors": [
+    "Maximilian"
+  ],
+  "contact": {},
+  "environment": "*",
+  "entrypoints": {
+    "client": [
+      "${group}.HudMod"
+    ],
+    "modmenu": [
+      "${group}.impl.ModMenuImpl"
+    ]
+  },
+  "depends": {
+    "fabricloader": "*",
+    "fabric-api": ">=${fabricVersion}",
+    "minecraft": ">=${minecraftVersion}"
+  }
+}

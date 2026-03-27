@@ -1,0 +1,42 @@
+name: Build and Upload Artifacts
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up JDK
+        uses: actions/setup-java@v4
+        with:
+          java-version: '17'
+          distribution: 'temurin'
+          cache: 'gradle'
+
+      - name: Update Version in Properties
+        run: |
+          GIT_HASH=$(git rev-parse --short HEAD)
+          sed -i "s/mod.version=.*/mod.version=DEV-$GIT_HASH/g" gradle.properties
+
+      - name: Grant execute permission
+        run: chmod +x gradlew
+
+      - name: Build
+        run: ./gradlew build
+
+      - name: Run Upload Script
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          chmod +x scripts/upload.sh
+          ./scripts/upload.sh

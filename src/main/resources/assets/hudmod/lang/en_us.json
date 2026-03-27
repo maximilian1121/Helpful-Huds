@@ -1,0 +1,18 @@
+{
+  "gui.hudmod.reset": "Reset To Default",
+  "gui.hudmod.none_selected.desc": "Please hover over an option to see short summary and preview!",
+  "gui.hudmod.bedrock_coords": "BE style coordinates",
+  "gui.hudmod.bedrock_coords.desc": "Displays a coordinate counter much like bedrock editions",
+  "gui.hudmod.bedrock_days": "BE style day counter",
+  "gui.hudmod.bedrock_days.desc": "Displays a days played counter like bedrock editions",
+  "gui.hudmod.bedrock_time": "BE style time of day",
+  "gui.hudmod.bedrock_time.desc": "Displays a time of day counter in the style of a bedrock edition stat like the other ones. This is not in actual bedrock!",
+  "gui.hudmod.bedrock_fps": "BE style fps counter",
+  "gui.hudmod.bedrock_fps.desc": "Displays an fps counter in the style of a bedrock edition stat like the other ones. This is not in actual bedrock!",
+  "gui.hudmod.hotbar_coords": "Hotbar coordinates",
+  "gui.hudmod.hotbar_coords.desc": "Displays coordinates on the hotbar",
+  "gui.hudmod.compass": "Compass hud",
+  "gui.hudmod.compass.desc": "Displays a compass at the top of your screen (Displays under Jade)",
+  "gui.hudmod.compass_smooth": "Smooth movement of compass",
+  "gui.hudmod.compass_smooth.desc": "Smoothes out the motion of the compass with linear interpolation.\n\n§eWarning it is experimental and is unusable at low framerates!\n\n§aRecomended average framerate: 60 ish"
+}
