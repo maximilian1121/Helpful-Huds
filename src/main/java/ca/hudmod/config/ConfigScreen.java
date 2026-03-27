@@ -57,10 +57,10 @@ public class ConfigScreen extends Screen {
     @Override
     public void render(GuiGraphics graphics, int mouseX, int mouseY, float partialTick) {
         //? if >1.21 {
-        this.renderBackground(graphics, mouseX, mouseY, partialTick);
-        //?} else {
-        /*this.renderBackground(graphics);
-        *///?}
+        /*this.renderBackground(graphics, mouseX, mouseY, partialTick);
+        *///?} else {
+        this.renderBackground(graphics);
+        //?}
         graphics.drawCenteredString(this.font, this.title, this.width / 2, 20, 0xFFFFFF);
         super.render(graphics, mouseX, mouseY, partialTick);
     }
