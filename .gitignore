@@ -44,4 +44,5 @@ replay_*.log
 *.hprof
 *.jfr
 
-
+# Forgot to add!
+.env
