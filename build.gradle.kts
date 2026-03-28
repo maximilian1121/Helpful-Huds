@@ -51,5 +51,9 @@ publishMods {
         if (mod.isFabric) requires("fabric-api")
         projectId = "oUH7cO2R"
         accessToken = providers.environmentVariable("MODRINTH_TOKEN")
+        dryRun = false
+
+        val versionsString = project.property("minecraft_version") as String
+        minecraftVersions.set(versionsString.split(",").map { it.trim() })
     }
 }
