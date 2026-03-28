@@ -5,10 +5,10 @@ import ca.hudmod.config.HudmodConfig;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.GuiGraphics;
 //? if <1.21.2 {
-import net.minecraft.client.gui.components.AbstractScrollWidget;
- //?} else {
-/*import net.minecraft.client.gui.components.AbstractScrollArea;
-*///?}
+/*import net.minecraft.client.gui.components.AbstractScrollWidget;
+ *///?} else {
+import net.minecraft.client.gui.components.AbstractScrollArea;
+//?}
 import net.minecraft.client.gui.components.Button;
 import net.minecraft.client.gui.narration.NarrationElementOutput;
 import net.minecraft.network.chat.Component;
@@ -18,10 +18,10 @@ import java.util.List;
 import java.util.function.Consumer;
 
 //? if <1.21.2 {
-public class OptionScroll extends AbstractScrollWidget {
- //?} else {
-/*public class OptionScroll extends AbstractScrollArea {
-    *///?}
+/*public class OptionScroll extends AbstractScrollWidget {
+ *///?} else {
+public class OptionScroll extends AbstractScrollArea {
+    //?}
     private final List<Button> buttons = new ArrayList<>();
     private final int buttonHeight = 20;
     private final int gap = 5;
@@ -70,10 +70,10 @@ public class OptionScroll extends AbstractScrollWidget {
 
     @Override
     //? if <1.21.2 {
-    protected void renderContents(GuiGraphics graphics, int mouseX, int mouseY, float partialTick) {
-     //?} else {
-    /*protected void renderWidget(GuiGraphics graphics, int mouseX, int mouseY, float partialTick) {
-        *///?}
+    /*protected void renderContents(GuiGraphics graphics, int mouseX, int mouseY, float partialTick) {
+     *///?} else {
+    protected void renderWidget(GuiGraphics graphics, int mouseX, int mouseY, float partialTick) {
+        //?}
         int currentY = this.getY();
         int adjustedMouseY = (int) (mouseY + this.scrollAmount());
 
@@ -96,18 +96,18 @@ public class OptionScroll extends AbstractScrollWidget {
     }
 
     //? if <1.21.2 {
-    @Override
+    /*@Override
     protected void renderBackground(GuiGraphics graphics) {
         graphics.fill(this.getX(), this.getY(), this.getX() + this.width, this.getY() + this.height, 0x80000000);
     }
-    //?}
+    *///?}
 
     //? if>1.21.1 {
-    /*@Override
+    @Override
     protected int contentHeight() {
-    *///?} else {
-    protected int getInnerHeight() {
-    //?}
+    //?} else {
+    /*protected int getInnerHeight() {
+    *///?}
         return (buttons.size() * (buttonHeight + gap));
     }
 

@@ -11,25 +11,25 @@ public class MainHud {
     static HotbarHud hotbarHud = new HotbarHud();
     static CompassHud compassHud = new CompassHud();
 
-    private static void renderMain(GuiGraphics guiGraphics, float tickDelta) {
+    public static void renderMain(GuiGraphics guiGraphics, float tickDelta) {
         Minecraft minecraft = Minecraft.getInstance();
         //? if <1.21 {
-        if (minecraft.options.renderDebug) return;
-        //?} else {
-        /*minecraft.gui.getDebugOverlay().showDebugScreen();
-        *///?}
+        /*if (minecraft.options.renderDebug) return;
+        *///?} else {
+        minecraft.gui.getDebugOverlay().showDebugScreen();
+        //?}
         bedrockHud.render(guiGraphics, tickDelta, minecraft, minecraft.player);
         hotbarHud.render(guiGraphics, tickDelta, minecraft, minecraft.player);
         compassHud.render(guiGraphics, tickDelta, minecraft, minecraft.player);
     }
 
     //? if >=1.21 {
-    /*public static void render(GuiGraphics guiGraphics, net.minecraft.client.DeltaTracker deltaTracker) {
+    public static void render(GuiGraphics guiGraphics, net.minecraft.client.DeltaTracker deltaTracker) {
         renderMain(guiGraphics, deltaTracker.getGameTimeDeltaPartialTick(true));
     }
-    *///?} else if fabric || forge {
-    public static void render(GuiGraphics guiGraphics, float delta) {
+    //?} else if fabric || forge {
+    /*public static void render(GuiGraphics guiGraphics, float delta) {
         renderMain(guiGraphics, delta);
     }
-    //?}
+    *///?}
 }

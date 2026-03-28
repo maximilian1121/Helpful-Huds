@@ -4,20 +4,20 @@ import ca.hudmod.Utils;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.GuiGraphics;
 //? if <1.21.2 {
-import net.minecraft.client.gui.components.AbstractScrollWidget;
-//?} else {
-/*import net.minecraft.client.gui.components.AbstractScrollArea;
-*///?}
+/*import net.minecraft.client.gui.components.AbstractScrollWidget;
+*///?} else {
+import net.minecraft.client.gui.components.AbstractScrollArea;
+//?}
 import net.minecraft.client.gui.narration.NarrationElementOutput;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.network.chat.Component;
 import net.minecraft.server.packs.resources.ResourceManager;
 
 //? if <1.21.2 {
-public class SummaryScroll extends AbstractScrollWidget {
-//?} else {
-/*public class SummaryScroll extends AbstractScrollArea {
-*///?}
+/*public class SummaryScroll extends AbstractScrollWidget {
+*///?} else {
+public class SummaryScroll extends AbstractScrollArea {
+//?}
         private String translationKey;
     private int contentHeight = 0;
 
@@ -34,10 +34,10 @@ public class SummaryScroll extends AbstractScrollWidget {
 
     @Override
     //? if <1.21.2 {
-    protected void renderContents(GuiGraphics graphics, int mouseX, int mouseY, float partialTick) {
-     //?} else {
-    /*protected void renderWidget(GuiGraphics graphics, int mouseX, int mouseY, float partialTick) {
-    *///?}
+    /*protected void renderContents(GuiGraphics graphics, int mouseX, int mouseY, float partialTick) {
+     *///?} else {
+    protected void renderWidget(GuiGraphics graphics, int mouseX, int mouseY, float partialTick) {
+    //?}
         String key = (translationKey != null) ? translationKey : "gui.hudmod.none_selected";
         Minecraft mc = Minecraft.getInstance();
 
@@ -54,7 +54,7 @@ public class SummaryScroll extends AbstractScrollWidget {
         if (manager.getResource(Utils.getConfigImage(key)).isPresent()) {
             //? if <1.21.2 {
             
-            graphics.blit(
+            /*graphics.blit(
                 Utils.getConfigImage(key),
                 drawX,
                 currentY,
@@ -62,8 +62,8 @@ public class SummaryScroll extends AbstractScrollWidget {
                 imageHeight, usableWidth, imageHeight
             );
             
-            //?} else {
-            /*graphics.blit(
+            *///?} else {
+            graphics.blit(
                     RenderType::guiTextured,
                     Utils.getConfigImage(key),
                     drawX,
@@ -74,7 +74,7 @@ public class SummaryScroll extends AbstractScrollWidget {
                     usableWidth,
                     imageHeight
             );
-            *///?}
+            //?}
 
             currentY += imageHeight + 8;
         }
@@ -88,19 +88,19 @@ public class SummaryScroll extends AbstractScrollWidget {
 
     @Override
     //? if <1.21.2 {
-    protected int getInnerHeight() {
-    //?} else {
-    /*protected int contentHeight() {
-    *///?}
+    /*protected int getInnerHeight() {
+    *///?} else {
+    protected int contentHeight() {
+    //?}
         return Math.max(this.height, contentHeight);
     }
 
     //? if <1.21.2 {
-    @Override
+    /*@Override
     protected void renderBackground(GuiGraphics graphics) {
         graphics.fill(this.getX(), this.getY(), this.getX() + this.width, this.getY() + this.height, 0x80000000);
     }
-    //?}
+    *///?}
 
     @Override
     protected double scrollRate() { return 14.0; }

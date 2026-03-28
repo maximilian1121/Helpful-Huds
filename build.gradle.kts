@@ -46,6 +46,10 @@ sourceSets {
     }
 }
 
+loom {
+    accessWidenerPath.set { file("../../src/main/resources/hudmod.accesswidener") }
+}
+
 publishMods {
     modrinth {
         if (mod.isFabric) requires("fabric-api")

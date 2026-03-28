@@ -4,6 +4,7 @@
   "version": "${version}",
   "name": "${name}",
   "description": "${description}",
+  "accessWidener": "hudmod.accesswidener",
   "authors": [
     "Maximilian"
   ],
